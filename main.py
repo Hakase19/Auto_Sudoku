@@ -1,24 +1,19 @@
-import sys
 import os
-import time
-import pyautogui
-from detect2 import number_detect
-from Solution import solver,valid
-from sudokuSolver import solveSudoku, Print
-import Solution
-# import sudokuSolver
+from sudokuDetector import number_detect
+from sudokuSolver import solver
+from sudokuPrinter import Print
+
+# 创建用于存储数独的矩阵grid
 grid = []
-os.system("python sele.py")
-# os.system("python detect2.py")
-print(grid)
+
+# 抓取数独题目的图片
+os.system("python sudokuCrawler.py")
+
+# 由图片识别数字并储存到grid中
 grid = number_detect(grid)
 
-print(grid)
-# grid = solveSudoku(grid)
+# 自动解数独
 grid = solver(grid)
-print(type(grid))
-print(grid)
 
-# print(solveSudoku(grid))
-
+# 在网页上完成数独题目
 Print(grid)
