@@ -9,7 +9,6 @@ from string import ascii_uppercase, digits
 
 import time
 import cv2
-import pytesseract
 import base64
 
 from PIL import Image
@@ -32,7 +31,7 @@ except:
     pass  # hehe
 
 # get board
-canvas = driver.find_element(By.XPATH, '/html/body/div[2]/div/div[1]/div[2]/div[3]/div[5]/canvas')
+canvas = driver.find_element(By.XPATH, '/html/body/div[2]/div/div[1]/div[3]/div[3]/div[5]/canvas')
 
 # https://stackoverflow.com/questions/38316402/how-to-save-a-canvas-as-png-in-selenium
 canvas_base64 = driver.execute_script("return arguments[0].toDataURL('image/png').substring(21);", canvas)

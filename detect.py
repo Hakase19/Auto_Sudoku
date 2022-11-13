@@ -70,8 +70,7 @@ kernel = cv2.getStructuringElement(cv2.MORPH_CROSS,(5,5))
 dilated = cv2.dilate(thresh,kernel)
 
 #提取轮廓
-contours, hierarchy = cv2.findContours(dilated,cv2.RETR_TREE,
-            cv2.CHAIN_APPROX_SIMPLE)
+contours, hierarchy = cv2.findContours(dilated,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
 
 #提取81个小方格
 #hierarchy[Next,Previous,First_Child,Parent])
